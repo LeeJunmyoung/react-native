@@ -11,3 +11,10 @@ npm install expo-cli --global
 expo init <프로젝트 명>
 
 ```
+
+## react-native 컨셉
+> 리액트 네이티브 컨셉 자체가 html tag들이 없다.
+> 컴포넌트 자체가 정해져 있고 리액트 네이티브 도큐먼트에서 확인하면된다.
+> react-native 코드가 네이티브하게 object c 혹은 java로 변환해 줄 뿐이다.
+[react-native](https://facebook.github.io/react-native/docs/view)
+
