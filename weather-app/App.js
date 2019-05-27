@@ -1,22 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View ,ActivityIndicator} from 'react-native';
 
-export default class App extends React.Component {
-  state = { animating: true }
-   
-  closeActivityIndicator = () => setTimeout(() => this.setState({
-  animating: false }), 60000)
+export default class App extends Component {
+  state = {
+    isLoaded: false
+  }
+
   render() {
-    const animating = this.state.animating
+    const { isLoaded } = this.state;
     return (
       <View style={styles.container}>
-        <ActivityIndicator
-               animating = {animating}
-               color = '#bc2b78'
-               size = "large"
-               style = {styles.activityIndicator}/>
- 
-        <Text>Hello! I'm a Native Developer Now!!!</Text>
+        { isLoaded ? null : 
+                          <View style={styles.loading}>
+                            <Text style={styles.loadingText}>Getting the weather... wait Plese</Text>
+                          </View>
+        }
       </View>
     );
   }
@@ -26,13 +24,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
-  activityIndicator: {
+  loading: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: '#FDF6AA',
+    justifyContent: 'flex-end',
+    padding: 25,
 
- },
+  },
+  loadingText: {
+    fontSize: 30,
+    marginBottom: 50,
+
+  }
 });
