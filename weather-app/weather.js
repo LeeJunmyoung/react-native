@@ -44,7 +44,7 @@ const weatherCases = {
         colors:['#D7D2CC', '#304352'],
         title: 'Clouds',
         subtitle: 'you know? open a hite',
-        icon: 'ios-snow'
+        icon: 'weather-cloudy'
     },
     Snow :{
         colors:['#7DE2FC', '#B9B6E5'],
